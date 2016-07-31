@@ -135,7 +135,7 @@ class MobileUserController extends Controller
      **/
     public function storeExperience(Request $request) {
         $validator = Validator::make($request, [
-            'currentuserid' => 'required',
+            'id' => 'required',
             'sector' => 'required',
             'category' => 'required',
             'company' => 'required',
@@ -147,7 +147,7 @@ class MobileUserController extends Controller
         if($validator->fails())
             $errors = $this->formatValidationErrors($validator);
         else {
-            $newexperience = User::find($request->currentuserid)->work_experiences()->create($request->all());
+            $newexperience = User::find($request->id)->work_experiences()->create($request->all());
         }
         $response['work_experiences'] = $newexperience;
         $response['errors'] = $errors;
@@ -182,10 +182,10 @@ class MobileUserController extends Controller
         if($validator->fails())
             $errors = $this->formatValidationErrors($validator);
         else {
-            if(User::find($request->currentuserid)->detail()->get()->count() == 0)
-                $detail = User::find($request->currentuserid)->detail()->create($data);
+            if(User::find($request->id)->detail()->get()->count() == 0)
+                $detail = User::find($request->id)->detail()->create($data);
             else
-                $detail = User::find($request->currentuserid)->detail()->get();
+                $detail = User::find($request->id)->detail()->get();
         }
         // if(Input::file('photofile')->isValid()) {
         //     $destination = 'photo';
@@ -227,15 +227,12 @@ class MobileUserController extends Controller
             'email_work' => 'email',
             'email_other' => 'email',
             'members' => 'numeric',
-            'website' => 'url',
-            'fb' => 'active_url',
-            'google' => 'active_url',
-            'linkedin' => 'active_url'
+            'id' => 'required'
         ]);
         if($validator->fails())
             $errors = $this->formatValidationErrors($validator);
         else {
-            $detail = User::find($request->currentuserid)->detail()->update($data);
+            $detail = User::find($request->id)->detail()->update($data);
         }
         $response['details'] = $detail;
         $response['errors'] = $errors;
@@ -253,7 +250,7 @@ class MobileUserController extends Controller
         //     $data['photo'] = $filename;
         // }
         // $detail = User::find($request->currentuserid)->detail()->update($data);
-        $detail = User::find($request->currentuserid)->detail();
+        $detail = User::find($request->id)->detail();
         $response['details'] = $detail;
         return response()->json($response);
     }

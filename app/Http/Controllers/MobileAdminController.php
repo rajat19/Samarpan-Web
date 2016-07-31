@@ -116,7 +116,7 @@ class MobileAdminController extends Controller
         $errors = array();
         $response = array();$detail = array();
         $validator = Validator::make($data, [
-            'currentuserid' => 'required',
+            'id' => 'required',
             'firstname' => 'required',
             'date_of_birth' => 'date',
             'retirement' => 'date',
@@ -135,8 +135,8 @@ class MobileAdminController extends Controller
         if($validator->fails())
             $errors = $this->formatValidationErrors($validator);
         else {
-            $user = User::find($request->currentuserid)->update($data);
-            $detail = User::find($request->currentuserid)->detail()->update($data);
+            $user = User::find($request->id)->update($data);
+            $detail = User::find($request->id)->detail()->update($data);
         }
         $response['details'] = $detail;
         $response['user'] = $user;
