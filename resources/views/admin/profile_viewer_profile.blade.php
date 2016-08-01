@@ -37,20 +37,15 @@
 </style>
 <br>
 <section id="profile" class="parallax-section">
-	<?php $detail = $details[0]; ?>
 	<div class="row">
 		<div class=" text-center">
-			<h1 class="heading">Department Profile</h1>
+			<h1 class="heading">Profile</h1>
 		</div>
     	<div class="col-md-3 col-sm-12 col-xs-12 pull-right">
 			<div class="card">
 			    <!--Card image-->
 			    <div class="view overlay hm-white-slight">
-			        @if($detail->photo)
-						<img class="img-fluid" src="{{url('photo/'.$detail->photo)}}" alt="{{$detail->name}}" style="margin-bottom:6px;">
-					@else
-						
-					@endif
+			        <img src="{{url('photo/'.$detail->photo)}}" class="img-fluid" alt="">
 			        <a href="#">
 			            <div class="mask"></div>
 			        </a>
@@ -59,8 +54,8 @@
 			    <div class="card-block">
 			        <!--Text-->
 			        <ul>
-			            <li><strong>No of Members in Department</strong> {{$detail->members}}</li>
-			            <li><strong>Department Name:</strong> {{$detail->firstname}} </li>
+			            <li><strong>No of Members In company</strong> {{$detail->members}}</li>
+			            <li><strong>Full Name:</strong> {{$detail->firstname}} </li>
 			            <li><strong>Started:</strong> {{$detail->date_of_birth->toFormattedDateString()}} ({{$detail->date_of_birth->diffInYears()}} years ago)</li>
 			            <li><strong>Expertise In:</strong> {{$detail->expertise_in}}</li>
 			            <li><strong>Office Address:</strong> {{$detail->address_permanent}} {{$detail->city_permanent}} {{$detail->state_permanent}} {{$detail->country_permanent}}</li>
@@ -88,16 +83,16 @@
 					    	<th scope="row">Pager Contact no:</th>
 					    	<td>{{$detail->contact_pager}}</td>
 					    </tr>
-					  	<tr>
-					      <th scope="row">Other Contact no:</th>
-					      <td>{{$detail->contact_other}}</td>
-					    </tr>					    
 					  </tbody>
 					</table>
 		    	</div>
 		    	<div class="col-md-6">
 		    		<table class="table sort">
 					  <tbody>
+					  	<tr>
+					      <th scope="row">Other Contact no:</th>
+					      <td>{{$detail->contact_other}}</td>
+					    </tr>
 					    <tr>
 					      <th scope="row">Other Email ID:</th>
 					      <td>{{$detail->email_other}}</td>
@@ -106,12 +101,32 @@
 					      <th scope="row">Skype ID</th>
 					      <td>{{$detail->skype}}</td>
 					    </tr>
+					  </tbody>
+					</table>
+		    	</div>
+		    </div>
+		    <div class="card">
+		    	<div class="col-md-12">
+		    		<table class="table table-responsive">
+					  <tbody>	    
 					    <tr>
 					    	<th>Website link:</th>
 					    	<td><a href="{{$detail->website}}">{{$detail->website}}</a></td>
 					    </tr>
-					  </tbody>
-					</table>
+					    <tr>
+					    	<th>Google+ link:</th>
+					    	<td><a href="{{$detail->google}}">{{$detail->google}}</a></td>
+					    </tr>
+					    <tr>
+					    	<th>Facebook Profile link:</th>
+					    	<td><a href="{{$detail->fb}}">{{$detail->fb}}</a></td>
+					    </tr>
+					    <tr>
+					    	<th>LinkedIn Profile link:</th>
+					    	<td><a href="{{$detail->linkedin}}">{{$detail->linkedin}}</a></td>
+					    </tr>
+					   </tbody>
+					</table>    
 		    	</div>
 		    </div>
 		    <div class="card">
@@ -145,7 +160,7 @@
 						   	</td>
 					    </tr>
 					    <tr>
-					      <th scope="row">Description about Department:</th>
+					      <th scope="row">Description about Company:</th>
 					      <td>{{$detail->description}}</td>
 					    </tr>
 					   </tbody>

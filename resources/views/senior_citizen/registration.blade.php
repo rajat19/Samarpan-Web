@@ -9,6 +9,13 @@
 						<h1 class="heading">Complete Profile</h1>
 					</div>	
 					<div class="content">
+						@if($errors->any())
+							<ul class="alert alert-danger">
+								@foreach($errors->all() as $error)
+									<li>{{$error}}</li>
+								@endforeach
+							</ul>
+						@endif
 						<form action="profile/new" method="POST" enctype="multipart/form-data" files="true">
 							{{csrf_field()}}
 							<label>Full Name:</label>

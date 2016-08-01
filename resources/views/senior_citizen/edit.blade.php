@@ -9,7 +9,14 @@
 						<h1 class="heading">Edit Profile</h1>
 					</div>	
 					<div class="content">
-						<form action="profile/update" method="POST" enctype="multipart/form-data" files="true">
+						@if($errors->any())
+							<ul class="alert alert-danger">
+								@foreach($errors->all() as $error)
+									<li>{{$error}}</li>
+								@endforeach
+							</ul>
+						@endif
+						<form action="{{url('profile/update')}}" method="POST" enctype="multipart/form-data" files="true">
 							{{csrf_field()}}
 							<label>Full Name:</label>
 							<div class="row">
@@ -138,7 +145,7 @@
 							</div>
 							<label>Any Other Contact No:</label>
 							<div class="md-form">
-								<input name="contact_alternate" type="number" class="form-control" id="mobNumber" placeholder="Other Contact Number" value="{{$details->contact_other}}">
+								<input name="contact_other" type="number" class="form-control" id="mobNumber" placeholder="Other Contact Number" value="{{$details->contact_other}}">
 								@if ($errors->has('contact_alternate'))
 		                            <span class="help-block">
 		                                <strong>{{ $errors->first('contact_alternate') }}</strong>
@@ -269,7 +276,7 @@
 							</div>
 							<label>Facebook Profile link:</label>
 							<div class="md-form">
-								<input name="fb" type="text" class="form-control" placeholder="fb Profile link" value="{{$details->fb}}">
+								<input name="fb" type="text" class="form-control" placeholder="http://" value="{{$details->fb}}">
 								@if ($errors->has('fb'))
 		                            <span class="help-block">
 		                                <strong>{{ $errors->first('fb') }}</strong>
@@ -278,7 +285,7 @@
 							</div>
 							<label>Google+ Profile link:</label>
 							<div class="md-form">
-								<input name="google" type="text" class="form-control" placeholder="Google+ Profile link:" value="{{$details->google}}">
+								<input name="google" type="text" class="form-control" placeholder="http://" value="{{$details->google}}">
 								@if ($errors->has('google'))
 		                            <span class="help-block">
 		                                <strong>{{ $errors->first('google') }}</strong>
@@ -287,7 +294,7 @@
 							</div>
 							<label>LinkedIn Profile link:</label>
 							<div class="md-form">
-								<input name="linkedin" type="text" class="form-control" placeholder="LinkedIn Profile link" value="{{$details->linkedin}}">
+								<input name="linkedin" type="text" class="form-control" placeholder="http://" value="{{$details->linkedin}}">
 							</div>
 							<label>Skype ID:</label>
 							<div class="md-form">
@@ -319,7 +326,8 @@
 						        </div>
 						    </div>
 							<div class="md-form col-md-4 pull-right">
-								<input name="submit" type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Update Portfolio">
+								<button type="submit" class="btn-secondary-outline waves-effect form-control">Update Portfolio</button>
+								<!-- <input type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Update Portfolio"> -->
 							</div>
 						</form>
 					</div>	

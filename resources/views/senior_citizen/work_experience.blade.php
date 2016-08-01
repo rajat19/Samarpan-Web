@@ -52,11 +52,11 @@
 				  </div>
 				</div>
 				@foreach($work_experiences as $experience)
-				<div class="card">
+				<div class="card" style="margin:20px;">
 					<table class="table">
 					  <thead>
 					    <tr>
-					      <td colspan="2" class="text-center"><strong>Organization/Society/Company:</strong> {{$experience->company}}</td>
+					      <td colspan="2" class="text-center"><h3 style="font-weight:bold">{{$experience->company}}</h3></td>
 					    </tr>
 					  </thead>
 					  <tbody>

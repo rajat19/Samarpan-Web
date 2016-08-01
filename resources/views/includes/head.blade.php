@@ -6,6 +6,8 @@
 	<meta name="keywords" content="">
 	<meta name="description" content="">
 
+	<script src="{{ URL::asset('js/jquery.min.js') }}""></script>
+	
 	<link rel="stylesheet" href="{{ URL::asset('css/bootstrap.min.css') }}">	
 	<link href="{{ URL::asset('css/mdb.min.css') }}" rel="stylesheet">
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css') }}"> -->

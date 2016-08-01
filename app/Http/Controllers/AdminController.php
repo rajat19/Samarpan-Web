@@ -50,6 +50,7 @@ class AdminController extends Controller
      **/
     public function seniorCitizens(Request $request) {
         $data = $request->all();
+        // dd(base_path());
         unset($data['_token']);
         unset($data['page']);
         if(!count($data))
@@ -68,7 +69,7 @@ class AdminController extends Controller
         $total = count($seniorCitizenDetails);
         $pagedData = array_slice($seniorCitizenDetails, $currentPage * $perPage, $perPage);
         $seniorCitizens = new LengthAwarePaginator($pagedData, $total, $perPage, $currentPage+1);
-        $seniorCitizens->setPath(Input::getBasePath());
+        $seniorCitizens->setPath(Input::getBasePath()."/admin/senior_citizens");
         return view('admin.senior_citizens', compact('seniorCitizens'));
     }
 
@@ -113,8 +114,14 @@ class AdminController extends Controller
         }
         else {
             $result = 2;
-            $profileViewers = Detail::where($data)->paginate(2);
-
+            $profileViewers = Detail::where('firstname', 'LIKE', '%'.$data['firstname'].'%')->paginate(5);
+            foreach($profileViewers as $viewer) {
+                if($viewer->user->type == 1) {
+                    return view('admin.profile_viewers', compact('profileViewers', 'result'));
+                };
+            }
+            $profileViewers = array();
+            $result = 0;
             return view('admin.profile_viewers', compact('profileViewers', 'result'));
         }
     }

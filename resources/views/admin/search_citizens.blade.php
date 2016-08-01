@@ -1,5 +1,13 @@
 @extends('layouts.default')
 @section('content')
+<style>
+.heading{
+      color: red;
+    }
+        .card{
+            margin-top: 2%;
+        }
+</style>
 <section id="team" class="parallax-section">
 	<div class="container">
 	<div class="row">

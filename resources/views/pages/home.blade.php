@@ -1,12 +1,6 @@
 @extends('layouts.default')
 @section('content')
-	<script src="{{ URL::asset('js/jquery.min.js') }}""></script>
-	<script src="{{ URL::asset('js/mdb.min.js') }}""></script>
-@if($errors->any())
-		@foreach($errors->all() as $error)
-			<?php echo "<script type='text/javascript'>toastr['warning']('".$error."')</script>"; ?>
-		@endforeach
-@endif
+
 <section id="account" class="parallax-section" style="display:none;">
 	<div class="container">
 		{{--  --}}

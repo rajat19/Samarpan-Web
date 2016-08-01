@@ -191,7 +191,7 @@ class UserController extends Controller
      **/
     public function store(DetailRequest $request) {
         $data = $request->all();
-        if(isset(Input::file('photofile'))) {
+        if(Input::file('photofile') != null) {
             if(Input::file('photofile')->isValid()) {
                 $destination = 'photo';
                 $extension = Input::file('photofile')->getClientOriginalExtension();
@@ -200,7 +200,7 @@ class UserController extends Controller
                 $data['photo'] = $filename;
             }
         }
-        if(isset(Input::file('cvfile'))) {
+        if(Input::file('cvfile') != null) {
             if(Auth::user()->type=='2' && Input::file('cvfile')->isValid()) {
                 $destination = 'cv';
                 $extension = Input::file('cvfile')->getClientOriginalExtension();
@@ -224,19 +224,24 @@ class UserController extends Controller
      **/
     public function update(DetailRequest $request) {
         $data = $request->all();
-        if(Input::file('photofile')->isValid()) {
-            $destination = 'photo';
-            $extension = Input::file('photofile')->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            Input::file('photofile')->move($destination, $filename);
-            $data['photo'] = $filename;
+        unset($data['_token']);
+        if(Input::file('photofile') != null) {
+            if(Input::file('photofile')->isValid()) {
+                $destination = 'photo';
+                $extension = Input::file('photofile')->getClientOriginalExtension();
+                $filename = time().'.'.$extension;
+                Input::file('photofile')->move($destination, $filename);
+                $data['photo'] = $filename;
+            }
         }
-        if(Auth::user()->type=='2' && Input::file('cvfile')->isValid()) {
-            $destination = 'cv';
-            $extension = Input::file('cvfile')->getClientOriginalExtension();
-            $filename = time().'.'.$extension;
-            Input::file('cvfile')->move($destination, $filename);
-            $data['cv'] = $filename;
+        if(Input::file('cvfile') != null) {
+            if(Auth::user()->type=='2' && Input::file('cvfile')->isValid()) {
+                $destination = 'cv';
+                $extension = Input::file('cvfile')->getClientOriginalExtension();
+                $filename = time().'.'.$extension;
+                Input::file('cvfile')->move($destination, $filename);
+                $data['cv'] = $filename;
+            }
         }
 
         $detail = Auth::user()->detail()->update($data);

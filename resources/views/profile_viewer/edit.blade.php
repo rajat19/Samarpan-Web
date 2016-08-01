@@ -16,7 +16,7 @@
 								@endforeach
 							</ul>
 						@endif
-						<form action="profile/update" method="POST" files="true" enctype="multipart/form-data">
+						<form action="{{url('profile/update')}}" method="POST" files="true" enctype="multipart/form-data">
 							{{csrf_field()}}
 							<label>Company Full Name:</label>
 					        <div class="md-form">
