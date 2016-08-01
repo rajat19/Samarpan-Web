@@ -45,7 +45,7 @@
 							<div id="inPublic">
 							</div>
 							<div class="md-form col-md-4 pull-right">
-								<input name="submit" type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="SUBMIT">
+								<input $scoretabletype="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="SUBMIT">
 							</div>
 						</form>
 					</div>	

@@ -146,9 +146,9 @@
 							<label>Any Other Contact No:</label>
 							<div class="md-form">
 								<input name="contact_other" type="number" class="form-control" id="mobNumber" placeholder="Other Contact Number" value="{{$details->contact_other}}">
-								@if ($errors->has('contact_alternate'))
+								@if ($errors->has('contact_other'))
 		                            <span class="help-block">
-		                                <strong>{{ $errors->first('contact_alternate') }}</strong>
+		                                <strong>{{ $errors->first('contact_other') }}</strong>
 		                            </span>
 		                        @endif
 							</div>

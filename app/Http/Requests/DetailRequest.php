@@ -33,7 +33,6 @@ class DetailRequest extends Request
             'email_other' => 'email',
             'photo' => 'image',
             'members' => 'numeric',
-            'website' => 'url',
             'fb' => 'active_url',
             'google' => 'active_url',
             'linkedin' => 'active_url'

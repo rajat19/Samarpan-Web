@@ -16,7 +16,7 @@
 								@endforeach
 							</ul>
 						@endif
-						<form action="profile/new" method="POST" files="true" enctype="multipart/form-data">
+						<form action="{{url('profile/new')}}" method="POST" files="true" enctype="multipart/form-data">
 							{{csrf_field()}}
 							<label>Department Full Name:</label>
 							<div class="md-form">
@@ -137,7 +137,7 @@
 						        </div>
 						    </div>
 						    <div class="md-form col-md-4 pull-right">
-								<input name="submit" type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Create Portfolio">
+								<input $scoretabletype="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Create Portfolio">
 							</div>
 						</form>
 					</div>	

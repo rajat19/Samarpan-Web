@@ -209,7 +209,8 @@ class UserController extends Controller
                 $data['cv'] = $filename;
             }
         }
-
+        unset($data['photofile']);
+        unset($data['cvfile']);
         $detail = Auth::user()->detail()->create($data);
         // session()->flash('flash_message', 'Your article has been created!');
         // flash()->overlay('Your profile has been successfully created');
@@ -243,11 +244,12 @@ class UserController extends Controller
                 $data['cv'] = $filename;
             }
         }
-
+        unset($data['photofile']);
+        unset($data['cvfile']);
         $detail = Auth::user()->detail()->update($data);
         // session()->flash('flash_message', 'Your article has been created!');
         // flash()->overlay('Your profile has been successfully created');
-        return redirect('profile');
+        return redirect('profile/view');
     }
 
     /**

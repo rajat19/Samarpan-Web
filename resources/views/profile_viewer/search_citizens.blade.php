@@ -18,7 +18,7 @@
                     <div id="addAccording2"></div>
                     <div id="inPublic"></div>
                     <div class="md-form col-md-4 pull-right">
-                        <button name="submit" type="submit" class="btn-secondary-outline waves-effect form-control" id="submit">Search <i class="fa fa-search"></i></button>
+                        <button $scoretabletype="submit" class="btn-secondary-outline waves-effect form-control" id="submit">Search <i class="fa fa-search"></i></button>
                     </div>
                 </form>
             </div>

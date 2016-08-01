@@ -162,7 +162,7 @@
 						<textarea name="message" rows="8" class="md-textarea form-control" id="message" placeholder="Message"></textarea>
 					</div>
 					<div class="md-form col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-						<input name="submit" type="submit" class="form-control" id="submit" value="send message">
+						<input $scoretabletype="submit" class="form-control" id="submit" value="send message">
 					</div>
 				</form>
 			</div>

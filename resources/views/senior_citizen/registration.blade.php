@@ -16,7 +16,7 @@
 								@endforeach
 							</ul>
 						@endif
-						<form action="profile/new" method="POST" enctype="multipart/form-data" files="true">
+						<form action="{{url('profile/new')}}" method="POST" enctype="multipart/form-data" files="true">
 							{{csrf_field()}}
 							<label>Full Name:</label>
 							<div class="row">
@@ -110,9 +110,9 @@
 							<label>Other Contact No:</label>
 							<div class="md-form">
 								<input name="contact_other" type="number" class="form-control" id="mobNumber" placeholder="Other Contact Number">
-								@if ($errors->has('contact_alternate'))
+								@if ($errors->has('contact_other'))
 		                            <span class="help-block">
-		                                <strong>{{ $errors->first('contact_alternate') }}</strong>
+		                                <strong>{{ $errors->first('contact_other') }}</strong>
 		                            </span>
 		                        @endif
 							</div>
@@ -270,7 +270,7 @@
 						        </div>
 						    </div>
 							<div class="md-form col-md-4 pull-right">
-								<input name="submit" type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Create Portfolio">
+								<input $scoretabletype="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Create Portfolio">
 							</div>
 						</form>
 					</div>	
