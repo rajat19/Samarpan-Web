@@ -6,7 +6,7 @@
 		<div class="col-md-1"></div>
 		<div class="col-md-10 col-sm-12 text-center">
 		@if($seniorCitizens)
-			<h1 class="heading">Results : Senior Citizens</h1>
+			<h1 class="heading2">Results : Senior Citizens</h1>
 			<div class="card">
 				<div class="col-md-12" style="margin-top:10px;">
 				Searched For: 

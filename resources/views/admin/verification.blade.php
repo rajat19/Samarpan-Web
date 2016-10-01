@@ -4,7 +4,7 @@
 	<div class="container">
 	<div class="row">
 	    <div class="col-md-offset-1 col-md-10 col-sm-12 text-center">
-		<h1 class="heading">Verification</h1>
+		<h1 class="heading2">Verification</h1>
 		
         {{-- card : begin --}}
         <div class="card">

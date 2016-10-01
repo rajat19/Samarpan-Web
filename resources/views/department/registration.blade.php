@@ -137,7 +137,7 @@
 						        </div>
 						    </div>
 						    <div class="md-form col-md-4 pull-right">
-								<input $scoretabletype="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Create Portfolio">
+								<input type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="Create Portfolio">
 							</div>
 						</form>
 					</div>	

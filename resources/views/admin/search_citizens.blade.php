@@ -13,7 +13,7 @@
 	<div class="row">
         <div class="col-md-1"></div>
 	    <div class="col-md-10 col-sm-12 text-center">
-		<h1 class="heading">Search : Senior Citizens</h1>
+		<h1 class="heading2">Search : Senior Citizens</h1>
         <div class="card">
             <div class="content">
                 <form action="{{url('admin/senior_citizens')}}" method="GET">

@@ -24,6 +24,9 @@
 		text-decoration: underline;
 		font-size: 25px;
 	}
+	.heading2{
+		padding-bottom: 10px;
+	}
 	
 	.card-block ul li{
 	    padding: 10px 0;
@@ -40,7 +43,7 @@
 	<?php $detail = $details[0]; ?>
 	<div class="row">
 		<div class=" text-center">
-			<h1 class="heading">My Profile</h1>
+			<h1 class="heading2">My Profile</h1>
 		</div>
     	<div class="col-md-3 col-sm-12 col-xs-12 pull-right">
 			<div class="card">

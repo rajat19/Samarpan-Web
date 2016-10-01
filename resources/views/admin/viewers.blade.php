@@ -5,7 +5,7 @@
 	<div class="row">
         <div class="col-md-1"></div>
 	    <div class="col-md-10 col-sm-12 text-center">
-		<h1 class="heading">Results : Profile Viewers</h1>
+		<h1 class="heading2">Results : Profile Viewers</h1>
 		
         @if($profileViewers)
         @foreach($profileViewers as $profileViewer)

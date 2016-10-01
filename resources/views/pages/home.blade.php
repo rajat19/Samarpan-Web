@@ -146,7 +146,7 @@
 	<div class="container">
 		<div class="row">
 			<div class="col-md-offset-1 col-md-10 col-sm-12 text-center">
-				<h1 class="heading">Contact Us</h1>
+				<h1 class="heading2">Contact Us</h1>
 				<hr>
 			</div>
 			<div class="col-md-offset-1 col-md-10 col-sm-12 wow fadeIn" data-wow-delay="0.9s">
@@ -162,7 +162,7 @@
 						<textarea name="message" rows="8" class="md-textarea form-control" id="message" placeholder="Message"></textarea>
 					</div>
 					<div class="md-form col-md-offset-3 col-md-6 col-sm-offset-3 col-sm-6">
-						<input $scoretabletype="submit" class="form-control" id="submit" value="send message">
+						<input type="submit" class="form-control" id="submit" value="send message">
 					</div>
 				</form>
 			</div>

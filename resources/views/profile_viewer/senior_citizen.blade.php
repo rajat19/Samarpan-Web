@@ -39,7 +39,7 @@
 <section id="profile" class="parallax-section">
 	<div class="row">
 		<div class=" text-center">
-			<h1 class="heading">Senior Citizen Profile</h1>
+			<h1 class="heading2">Senior Citizen Profile</h1>
 		</div>
     	<div class="col-md-3 col-sm-12 col-xs-12 pull-right">
 			<div class="card">

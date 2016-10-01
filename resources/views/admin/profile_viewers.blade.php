@@ -13,7 +13,7 @@
 	<div class="row">
         <div class="col-md-1"></div>
 	    <div class="col-md-10 col-sm-12 text-center">
-        <h1 class="heading">Profile Viewers</h1>
+        <h1 class="heading2">Profile Viewers</h1>
         @if($result == 0 || $result == 2)
             <div class="card">
                 <div class="content">

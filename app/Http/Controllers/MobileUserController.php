@@ -56,7 +56,10 @@ class MobileUserController extends Controller
         $data['details'] = $details;
         $details[0]['add_alternate'] = implode(', ', array_filter(array($d['address_alternate'], $d['city_alternate'], $d['state_alternate'], $d['country_alternate'])));
         $data['details'] = $details;
-        return response()->json($data);
+        // return response()->json($data);
+        $a = json_encode($data, JSON_PRETTY_PRINT);
+        return $a;
+        // $a = response()->json($data);
     }
 
     public function startVerification() {

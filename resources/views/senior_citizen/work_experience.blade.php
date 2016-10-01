@@ -7,6 +7,9 @@
 		font-size: 25px;
 		text-decoration: underline;
 	}
+	.heading2{
+		padding-bottom: 10px;
+	}
 	input[type=submit] {
     padding-top: 5%;
 }
@@ -14,8 +17,10 @@
 <section id="team" class="parallax-section">
 	<div class="container">
 		<div class="row">
+			<div class="text-center">
+				<h1 class="heading2">Work Experiences</h1>
+			</div>
 			<div class="col-md-offset-2 col-md-8 col-sm-12" id="accordion">
-				<h1 align="center" class="heading">Work Experiences</h1>
 				<p>
 					<a class="btn btn-primary" data-toggle="collapse" href="#add" aria-expanded="false" data-parent="#accordion">
 					Add new Work Experience <i class="fa fa-plus"></i>
@@ -45,7 +50,7 @@
 							<div id="inPublic">
 							</div>
 							<div class="md-form col-md-4 pull-right">
-								<input $scoretabletype="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="SUBMIT">
+								<input type="submit" class="btn-secondary-outline waves-effect form-control" id="submit" value="SUBMIT">
 							</div>
 						</form>
 					</div>	

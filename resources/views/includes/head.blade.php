@@ -59,4 +59,7 @@
 		    background-color: #fff;
 		    border: 1px solid #ddd;
 		}
+		.heading2{
+        	padding-bottom: 10px;
+    	}
 	</style>
